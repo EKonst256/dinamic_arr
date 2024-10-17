@@ -1,16 +1,16 @@
 #include "mtx.hpp"
 #include <iostream>
 
-void input(int ** t, size_t m, size_t n)
+void input(int ** t, size_t n, size_t m)
 {
-  for(size_t i = 0; i < m; i++) {
-    for(size_t j = 0; j < n; j++) {
+  for(size_t i = 0; i < n; i++) {
+    for(size_t j = 0; j < m; j++) {
       std::cin >> t[i][j];
     }
   }
 }
 
-void output(const int * const * t, size_t m, size_t n)
+void output(const int * const * t, size_t n, size_t m)
 {
   for(size_t i = 0; i < n; i++) {
     std::cout << t[i][0];
@@ -29,13 +29,13 @@ void destroy(int ** t, size_t n)
   return;
 }
 
-int ** create_arr(int m, int n)
+int ** create_arr(int n, int m)
 {
   size_t created = 0;
-  int ** t = new int*[m];
+  int ** t = new int*[n];
   try {
-    for(;created < n; created++) {
-      t[created] = new int[n];
+    for(;created < m; created++) {
+      t[created] = new int[m];
     }
   } catch(const std::bad_alloc &e) {
     destroy(t, created);
