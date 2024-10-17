@@ -17,6 +17,7 @@ void output(const int * const * t, size_t n, size_t m)
       for(size_t j = 1; j < m; j++) {
         std::cout << " " << t[i][j];
       }
+    std::cout << "\n";
   }
 }
 
