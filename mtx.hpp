@@ -1,8 +1,8 @@
-#include <iostream>
 #ifndef MATRIX_HPP
 #define MATRIX_HPP
-int ** create_arr(int m, int n);
-void destroy(int ** t, size_t n, size_t m);
-void input(int ** t, size_t m, size_t n);
-void output(const int * const * t, size_t m, size_t n);
+#include <iostream>
+int ** create_arr(size_t, size_t);
+void destroy(int **, size_t);
+void input(int **, size_t, size_t);
+void output(const int * const *, size_t, size_t);
 #endif

@@ -1,5 +1,6 @@
 #include "mtx.hpp"
 #include <iostream>
+#include <stdexcept>
 
 void input(int ** t, size_t n, size_t m)
 {
@@ -7,6 +8,10 @@ void input(int ** t, size_t n, size_t m)
     for(size_t j = 0; j < m; j++) {
       std::cin >> t[i][j];
     }
+  }
+  if(!std::cin) {
+    destroy(t, n);
+    throw std::exception();
   }
 }
 
@@ -30,7 +35,7 @@ void destroy(int ** t, size_t n)
   return;
 }
 
-int ** create_arr(int n, int m)
+int ** create_arr(size_t n, size_t m)
 {
   size_t created = 0;
   int ** t = new int*[n];

@@ -1,2 +1,2 @@
-mtx: main.cpp mtx.h mtx.cpp
+mtx: main.cpp mtx.hpp mtx.cpp
 	g++ -o $@ $^
