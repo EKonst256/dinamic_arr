@@ -4,11 +4,12 @@
 #include "mtx.hpp"
 class matrix
 {
-  int **t_;
   size_t n_, m_;
   public:
+    int **t_;
     size_t get_rows();
     size_t get_colunms();
+    void resize(size_t, size_t);
 
     ~matrix()
     {
@@ -18,7 +19,7 @@ class matrix
     matrix(size_t n, size_t m):
       t_(create_arr(n, m)), n_(n), m_(m)
       {}
-  
+
     void input()
     {
       ::input(t_, n_, m_);

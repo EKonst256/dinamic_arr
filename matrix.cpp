@@ -10,3 +10,8 @@ size_t matrix::get_colunms()
 {
   return m_;
 }
+
+void matrix::resize(size_t n, size_t m)
+{
+  return;
+}
