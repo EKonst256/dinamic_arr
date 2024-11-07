@@ -3,10 +3,10 @@
 
 size_t matrix::get_rows()
 {
-  return matrix::n;
+  return n_;
 }
 
 size_t matrix::get_colunms()
 {
-  return matrix::m;
+  return m_;
 }
