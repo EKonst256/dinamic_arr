@@ -1,7 +1,7 @@
 #include <iostream>
 #include "matrix.hpp"
+#include "mtx.hpp"
 int main()
 {
-  matrix M{4, 4};
-  std::cout << M.get_rows() << "\n";
+  
 }
