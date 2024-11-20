@@ -9,8 +9,8 @@ void input(int ** t, size_t n, size_t m)
       std::cin >> t[i][j];
     }
   }
-  if(!std::cin) {
-    destroy(t, n);
+  if (!std::cin)
+  {
     throw std::exception();
   }
 }
@@ -26,7 +26,7 @@ void output(const int * const * t, size_t n, size_t m)
   }
 }
 
-void destroy(int ** t, size_t n)
+void destroy(int ** t, const size_t n)
 {
   for(size_t i = 0; i < n; i++) {
     delete[] t[i];
@@ -40,11 +40,12 @@ int ** create_arr(size_t n, size_t m)
   size_t created = 0;
   int ** t = new int*[n];
   try {
-    for(;created < m; created++) {
+    for(;created < n; created++)
+    {
       t[created] = new int[m];
     }
-  } catch(const std::bad_alloc &e) {
-    destroy(t, created);
+  }
+  catch(const std::bad_alloc &e) {
     throw;
   }
   return t;
